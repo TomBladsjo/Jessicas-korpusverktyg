@@ -17,7 +17,7 @@
 
 ##### Användning:
 - Skriv `python3 search.py <namnet på mappen där korpusfilerna ligger>` i terminalen och tryck `enter`
-- Skriv in den sekvens av taggar du vill söka efter (det kommer en prompt som säger hur du ska göra) och tryck `enter`
+- Skriv in den sekvens av taggar du vill söka efter (det kommer en prompt som säger hur du ska göra) och tryck `enter`. Stora eller små bokstäver spelar ingen roll, men det måste vara rättstavat. (En lista med alla taggar som förekommer i filen `1450.bandamenn.nar-sag.tagged`, i alfabetisk ordning, finns i filen `list_of_tags.txt`.)
 - Programmet kommer att skriva ut i terminalen hur många matchningar som gjordes, sammanlagt och i varje enskild fil. Det går att scrolla upp och ned i terminalen så att du kan läsa allt den har skrivit ut. 
 - Programmet kommer att skapa en mapp som heter `resultat` i samma mapp som `search.py` ligger
 - Alla meningar som matchar sökningen kommer att hamna i en fil i mappen `resultat`. Korpusfilerna söks igenom en åt gången, och namnet på filerna kommer att stå i resultatfilen, som ett slags rubrik till de matchningar som kommer från just den filen. 
