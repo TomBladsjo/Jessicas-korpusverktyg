@@ -4,7 +4,7 @@ import os
 
 
 def parsefile(path):
-    with open(path, 'r') as f:
+    with open(path, 'r', errors='ignore') as f:
         lines = [line.split() for line in f]
     forms, tags, lemmas, sents = [], [], [], []
     f, t, l, s = [], [], [], []
