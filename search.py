@@ -21,13 +21,16 @@ def parsefile(path):
 def loadfiles(dir):
     corpus = {}
     for file in os.listdir(dir):
-        corpus[file] = parsefile(os.path.join(dir, file))
+        if file[-7:] == '.tagged':
+            print(f'läser fil {file}')
+            corpus[file] = parsefile(os.path.join(dir, file))
     return corpus
 
+    
 
 def compare_match(col, start, search):
     for i in range(len(search)):
-        if col[start+i].lower() != search[i]:
+        if col[start+i].lower() not in search[i].split('|'): # if col[start+i].lower() != search[i]:
             return False
     return (start+i, start+len(search))
 
@@ -61,7 +64,7 @@ parser.add_argument('mapp', help='mappen där korpusfilerna ligger')
 # parser.add_argument('taggar', help='skriv den sekvens av taggar du vill söka efter, separerade med kommatecken och mellanslag. exempel: PRO-N, VBDI, ADV')
 args = parser.parse_args()
 
-searchstr = input('Skriv den sekvens av taggar du vill söka efter, separerade med kommatecken och mellanslag. Avsluta med enter. \nExempel: PRO-N, VBDI, ADV\nExempel: CONJ\n\nsökning: ')
+searchstr = input('Skriv den sekvens av taggar du vill söka efter, separerade med kommatecken och mellanslag. Avsluta med enter. Om en av positionerna har flera alternativ, separera dem med "|" (utan mellanslag). \nExempel: PRO-N, VBDI, ADV\nExempel: CONJ\nExempel: VBDI, NPR-A|NPR-D\nsökning: ')
 name = '_'.join(searchstr.split(', '))
 resultdir = f'./resultat/'
 
