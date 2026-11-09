@@ -64,7 +64,7 @@ parser.add_argument('mapp', help='mappen där korpusfilerna ligger')
 # parser.add_argument('taggar', help='skriv den sekvens av taggar du vill söka efter, separerade med kommatecken och mellanslag. exempel: PRO-N, VBDI, ADV')
 args = parser.parse_args()
 
-searchstr = input('Skriv den sekvens av taggar du vill söka efter, separerade med kommatecken och mellanslag. Avsluta med enter. Om en av positionerna har flera alternativ, separera dem med "|" (utan mellanslag). \nExempel: PRO-N, VBDI, ADV\nExempel: CONJ\nExempel: VBDI, NPR-A|NPR-D\nsökning: ')
+searchstr = input('Skriv den sekvens av taggar du vill söka efter, separerade med kommatecken och mellanslag. Avsluta med enter. Om en av positionerna har flera alternativ, separera dem med "|" (utan mellanslag). \nExempel: PRO-N, VBDI, ADV\nExempel: CONJ\nExempel: VBDI, NPR-A|NPR-D|NPR-G\nsökning: ')
 name = '_'.join(searchstr.split(', '))
 resultdir = f'./resultat/'
 
